@@ -1,0 +1,10 @@
+version: "2.2"
+services:
+    im-render:
+        image: "atw527/im-dedup"
+        build:
+            context: .
+            dockerfile: Dockerfile
+        volumes:
+            - ./cmd:/usr/local/bin:ro
+        command: ["python", "/usr/local/bin/dedup.py"]
